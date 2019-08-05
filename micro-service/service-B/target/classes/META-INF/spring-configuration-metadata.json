@@ -1,0 +1,124 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource",
+      "type": "com.zhang.config.DataSourceProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.driver-class-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.filters",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 10,
+      "name": "mysqldb.datasource.initial-size",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.mapper-locations",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.max-active",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.max-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.max-open-prepared-statements",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.max-wait",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.min-evictable-idle-time-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.min-idle",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.password",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": false,
+      "name": "mysqldb.datasource.pool-prepared-statements",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": false,
+      "name": "mysqldb.datasource.test-on-borrow",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": false,
+      "name": "mysqldb.datasource.test-on-return",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": false,
+      "name": "mysqldb.datasource.test-while-idle",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "defaultValue": 0,
+      "name": "mysqldb.datasource.time-between-eviction-runs-millis",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.type-alias-package",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.url",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.username",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.zhang.config.DataSourceProperties",
+      "name": "mysqldb.datasource.validation-query",
+      "type": "java.lang.String"
+    }
+  ]
+}

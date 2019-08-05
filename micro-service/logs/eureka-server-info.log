@@ -1,0 +1,806 @@
+2019-08-02 09:21:48.171 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386: startup date [Fri Aug 02 09:21:48 CST 2019]; root of context hierarchy
+2019-08-02 09:21:48.592 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-08-02 09:21:48.664 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cec9d568] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-02 09:21:48.811 [main] INFO  o.h.validator.internal.util.Version -HV000001: Hibernate Validator 5.3.4.Final
+2019-08-02 09:21:49.834 [main] INFO  com.lovnx.EurekaServer -No active profile set, falling back to default profiles: default
+2019-08-02 09:21:49.858 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66f66866: startup date [Fri Aug 02 09:21:49 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386
+2019-08-02 09:21:50.818 [main] WARN  o.s.c.a.ConfigurationClassPostProcessor -Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-08-02 09:21:51.115 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=380f7525-a313-3abd-a34e-046ed264cf0e
+2019-08-02 09:21:51.142 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-08-02 09:21:51.342 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$cec9d568] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-02 09:21:52.037 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat initialized with port(s): 7070 (http)
+2019-08-02 09:21:52.054 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2019-08-02 09:21:52.056 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2019-08-02 09:21:52.295 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-08-02 09:21:52.295 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 2437 ms
+2019-08-02 09:21:53.461 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'metricsFilter' to: [/*]
+2019-08-02 09:21:53.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-02 09:21:53.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-02 09:21:53.462 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-02 09:21:53.463 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-02 09:21:53.463 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webRequestTraceFilter' to: [/*]
+2019-08-02 09:21:53.463 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'servletContainer' to urls: [/eureka/*]
+2019-08-02 09:21:53.463 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'applicationContextIdFilter' to: [/*]
+2019-08-02 09:21:53.464 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-02 09:21:53.601 [localhost-startStop-1] INFO  c.s.j.s.i.a.WebApplicationImpl -Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-08-02 09:21:53.740 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2019-08-02 09:21:53.740 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2019-08-02 09:21:54.034 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2019-08-02 09:21:54.035 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2019-08-02 09:21:55.304 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING
+2019-08-02 09:21:55.374 [main] INFO  c.netflix.discovery.DiscoveryClient -Client configured to neither register nor query for data.
+2019-08-02 09:21:55.388 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1564708915388 with initial instances count: 0
+2019-08-02 09:21:55.504 [main] INFO  c.n.e.DefaultEurekaServerContext -Initializing ...
+2019-08-02 09:21:55.507 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes -Adding new peer nodes [http://localhost:7070/eureka/]
+2019-08-02 09:21:56.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2019-08-02 09:21:56.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2019-08-02 09:21:56.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2019-08-02 09:21:56.079 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2019-08-02 09:21:56.233 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes -Replica node URL:  http://localhost:7070/eureka/
+2019-08-02 09:21:56.246 [main] INFO  c.n.e.r.AbstractInstanceRegistry -Finished initializing remote region registries. All known remote regions: []
+2019-08-02 09:21:56.247 [main] INFO  c.n.e.DefaultEurekaServerContext -Initialized
+2019-08-02 09:21:56.799 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66f66866: startup date [Fri Aug 02 09:21:49 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386
+2019-08-02 09:21:56.974 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.status(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2019-08-02 09:21:56.976 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/lastn],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.lastn(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2019-08-02 09:21:56.978 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-02 09:21:56.979 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-02 09:21:57.060 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 09:21:57.060 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 09:21:57.127 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 09:21:57.833 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2019-08-02 09:21:57.834 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.835 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.836 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.837 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.841 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2019-08-02 09:21:57.841 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2019-08-02 09:21:57.841 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.843 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2019-08-02 09:21:57.843 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.845 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2019-08-02 09:21:57.846 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.847 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2019-08-02 09:21:57.848 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2019-08-02 09:21:57.848 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.849 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.849 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.850 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.851 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 09:21:57.852 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-02 09:21:57.852 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2019-08-02 09:21:57.852 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 09:21:57.855 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 09:21:57.856 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 09:21:57.857 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2019-08-02 09:21:58.040 [main] INFO  o.s.u.f.SpringTemplateLoader -SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@66f66866: startup date [Fri Aug 02 09:21:49 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386] and template loader path [classpath:/templates/]
+2019-08-02 09:21:58.042 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer -ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-02 09:21:58.218 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-08-02 09:21:58.218 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-02 09:21:58.228 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-08-02 09:21:58.228 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-02 09:21:58.590 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Registering beans for JMX exposure on startup
+2019-08-02 09:21:58.608 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshScope' has been autodetected for JMX exposure
+2019-08-02 09:21:58.609 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'environmentManager' has been autodetected for JMX exposure
+2019-08-02 09:21:58.612 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2019-08-02 09:21:58.613 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2019-08-02 09:21:58.614 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2019-08-02 09:21:58.619 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2019-08-02 09:21:58.639 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2019-08-02 09:21:58.656 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2019-08-02 09:21:58.672 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=66f66866,type=ConfigurationPropertiesRebinder]
+2019-08-02 09:21:58.684 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2019-08-02 09:21:58.686 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Registering beans for JMX exposure on startup
+2019-08-02 09:21:58.927 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 0
+2019-08-02 09:21:58.929 [main] INFO  o.s.c.n.e.EurekaDiscoveryClientConfiguration -Registering application eureka-server with eureka with status UP
+2019-08-02 09:21:58.929 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Setting the eureka configuration..
+2019-08-02 09:21:58.929 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-08-02 09:21:58.930 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Eureka environment value eureka.environment is not set, defaulting to test
+2019-08-02 09:21:58.933 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'auditEventsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]
+2019-08-02 09:21:58.942 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'featuresEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=featuresEndpoint]
+2019-08-02 09:21:58.948 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -isAws returned false
+2019-08-02 09:21:58.949 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Initialized server context
+2019-08-02 09:21:58.949 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Got 1 instances from neighboring DS node
+2019-08-02 09:21:58.949 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Renew threshold is: 1
+2019-08-02 09:21:58.950 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Changing status to UP
+2019-08-02 09:21:58.957 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2019-08-02 09:21:58.957 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerInitializerConfiguration -Started Eureka Server
+2019-08-02 09:21:58.960 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2019-08-02 09:21:58.964 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2019-08-02 09:21:58.967 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2019-08-02 09:21:58.970 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2019-08-02 09:21:58.973 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'loggersEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]
+2019-08-02 09:21:58.980 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2019-08-02 09:21:58.983 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2019-08-02 09:21:58.987 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2019-08-02 09:21:58.989 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2019-08-02 09:21:58.992 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2019-08-02 09:21:58.995 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'archaiusEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=archaiusEndpoint]
+2019-08-02 09:21:59.024 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-7070"]
+2019-08-02 09:21:59.040 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler [http-nio-7070]
+2019-08-02 09:21:59.066 [main] INFO  o.a.tomcat.util.net.NioSelectorPool -Using a shared selector for servlet write/read
+2019-08-02 09:21:59.095 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat started on port(s): 7070 (http)
+2019-08-02 09:21:59.096 [main] INFO  o.s.c.n.e.EurekaDiscoveryClientConfiguration -Updating port to 7070
+2019-08-02 09:21:59.101 [main] INFO  com.lovnx.EurekaServer -Started EurekaServer in 12.315 seconds (JVM running for 13.615)
+2019-08-02 09:22:00.904 [http-nio-7070-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-02 09:22:00.905 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-02 09:22:00.957 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization completed in 52 ms
+2019-08-02 09:22:58.951 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:23:58.952 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:24:58.952 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:25:58.952 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:26:58.953 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:27:58.954 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 09:28:58.954 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:29:58.954 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:30:58.955 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:31:58.956 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 09:32:58.957 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:33:58.957 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:34:58.958 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:35:58.958 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:36:56.246 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 1
+2019-08-02 09:36:58.958 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:37:58.959 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:38:58.960 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:39:58.961 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:40:35.420 [http-nio-7070-exec-6] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 09:40:36.116 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 09:40:58.961 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:41:58.962 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:42:58.962 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:43:58.963 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:44:58.963 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:45:58.964 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:46:58.965 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 09:47:58.965 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:48:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:49:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:50:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:51:56.245 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 09:51:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:52:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:53:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:54:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:55:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:56:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:57:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:58:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 09:59:58.966 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:00:22.044 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:00:22.554 [http-nio-7070-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:00:58.967 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:01:58.967 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:02:58.968 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:03:58.968 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:04:58.969 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:05:17.092 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:05:17.606 [http-nio-7070-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:05:58.969 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:06:48.215 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:06:48.730 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:06:56.245 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 10:06:58.970 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:07:31.360 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:07:31.872 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:07:58.971 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:08:58.971 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:09:58.971 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:10:58.971 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:11:58.971 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:12:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:13:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:14:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:15:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:16:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:17:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:18:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:19:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:20:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:21:56.245 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 10:21:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:22:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:23:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:24:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:25:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:26:58.972 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:27:58.973 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:28:58.974 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:29:58.974 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:30:58.975 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:31:58.975 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:32:58.976 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:33:58.977 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:34:58.978 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:35:58.978 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:36:56.246 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 10:36:58.979 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:37:17.440 [http-nio-7070-exec-8] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:37:17.950 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:37:58.979 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:38:58.979 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:39:58.980 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:40:58.981 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:41:58.982 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:42:58.982 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:43:58.982 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:44:58.983 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:45:58.983 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:46:58.983 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:47:58.984 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:48:58.984 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:49:58.984 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:50:58.985 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:51:56.245 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 10:51:58.985 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:52:58.986 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:53:58.986 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:54:12.736 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 10:54:13.246 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 10:54:58.986 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:55:58.986 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:56:58.987 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 10:57:58.987 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:58:58.987 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 10:59:58.987 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:00:58.987 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:01:58.988 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:02:58.988 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:03:58.989 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:04:58.989 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:05:58.989 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:06:56.246 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 3
+2019-08-02 11:06:58.989 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:07:58.989 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:08:58.990 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:09:58.990 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:10:58.990 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:11:58.991 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:12:58.992 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:13:58.993 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 11:14:58.993 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:15:58.993 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:16:58.993 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:17:36.908 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance SERVICE-B/LAPTOP-CQQ8379A:service-B:7076 with status UP (replication=false)
+2019-08-02 11:17:37.422 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance SERVICE-B/LAPTOP-CQQ8379A:service-B:7076 with status UP (replication=true)
+2019-08-02 11:17:58.994 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 11:18:58.995 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:19:58.995 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:20:58.996 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:21:56.245 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 11:21:58.996 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:22:06.685 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=false)
+2019-08-02 11:22:07.193 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=true)
+2019-08-02 11:22:58.996 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:23:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:24:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:24:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Evicting 1 items (expired=1, evictionLimit=1)
+2019-08-02 11:24:58.998 [Eureka-EvictionTimer] WARN  c.n.e.r.AbstractInstanceRegistry -DS: Registry: expired lease for SERVICE-B/LAPTOP-CQQ8379A:service-B:7076
+2019-08-02 11:24:58.999 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Cancelled instance SERVICE-B/LAPTOP-CQQ8379A:service-B:7076 (replication=false)
+2019-08-02 11:25:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:26:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:27:58.997 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:28:25.457 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 11:28:25.969 [http-nio-7070-exec-8] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 11:28:58.998 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:29:58.999 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:30:58.999 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:31:58.999 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:32:59.000 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:33:59.000 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:34:59.000 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:35:59.000 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:36:56.246 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 11:36:59.001 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 11:37:59.001 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:38:59.002 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:39:59.002 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:40:59.003 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:41:59.003 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:42:34.386 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 11:42:34.896 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 11:42:59.004 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 11:43:59.005 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:44:59.005 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:45:59.005 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:46:31.066 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 11:46:31.580 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 11:46:59.006 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:47:59.006 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:48:59.007 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:49:59.007 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:50:59.007 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:51:56.246 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 11:51:59.008 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:52:59.008 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:53:59.008 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:54:59.009 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:55:59.009 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:56:59.009 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:57:59.010 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:58:59.010 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 11:59:59.010 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:00:59.010 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:01:59.011 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:02:59.012 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:03:59.012 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:04:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:05:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:06:56.247 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 12:06:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:07:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:08:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:09:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:10:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:11:59.013 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:12:59.014 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:13:59.015 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 12:14:59.016 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 12:15:59.017 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:16:59.018 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:17:59.019 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 12:18:59.019 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:19:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:20:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:21:56.247 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 12:21:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:22:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:23:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:24:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:25:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:26:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:27:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:28:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:29:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:30:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:31:59.020 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:32:59.021 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:33:59.021 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:34:59.022 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:35:59.022 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:36:56.248 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 12:36:59.022 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:37:59.022 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:38:59.023 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 12:39:59.023 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:40:59.024 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:41:59.024 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:42:59.024 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:43:59.024 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:44:59.025 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:45:59.025 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:46:59.026 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:47:59.026 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:48:59.026 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:49:59.026 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:50:59.026 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:51:56.258 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 12:51:59.027 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:52:59.027 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:53:59.027 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:54:59.028 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:55:59.028 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:56:59.029 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 12:57:59.029 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:58:59.030 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 12:59:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:00:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:01:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:02:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:03:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:04:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:05:59.031 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:06:56.247 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 13:06:59.032 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:07:59.033 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:08:59.034 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:09:59.035 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:10:59.035 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:11:59.036 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:12:59.037 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:13:59.038 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:14:59.038 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:15:59.038 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:16:59.038 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:17:59.038 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:18:59.039 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:19:59.039 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:20:59.041 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:21:56.248 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 13:21:59.042 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:22:59.043 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:23:59.043 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:24:59.044 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:25:59.044 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:26:59.044 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:27:59.045 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:28:59.045 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:29:59.045 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:30:59.045 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:31:59.046 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:32:59.047 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:33:59.047 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:34:59.047 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:35:59.047 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:36:56.248 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 13:36:59.047 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:37:59.048 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:38:59.049 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:39:59.049 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:40:59.050 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:41:59.050 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:42:59.050 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:43:59.051 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:44:59.052 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:45:59.053 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:46:59.053 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:47:59.054 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:48:59.054 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:49:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:50:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:51:56.248 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 13:51:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:52:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:53:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:54:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:55:59.055 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:56:59.056 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:57:59.057 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 13:58:59.058 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 13:59:59.059 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:00:59.060 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:01:59.060 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:02:59.060 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:03:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:04:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:05:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:06:56.249 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 14:06:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:07:17.279 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 14:07:17.783 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 14:07:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:08:59.061 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:09:59.062 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:10:59.062 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:11:59.063 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:12:59.063 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:13:59.063 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:14:59.064 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:15:59.065 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:16:59.065 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:17:59.066 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:18:43.284 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=false)
+2019-08-02 14:18:43.795 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=true)
+2019-08-02 14:18:59.066 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:19:59.067 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:20:59.067 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:21:56.249 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 14:21:59.067 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:22:59.069 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:23:59.069 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:24:59.069 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:25:05.438 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=false)
+2019-08-02 14:25:05.943 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=true)
+2019-08-02 14:25:59.069 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:26:59.070 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:27:59.071 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:28:59.071 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:29:59.071 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:30:59.071 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:31:59.073 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:32:59.073 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:33:59.073 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:34:59.074 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:35:59.074 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:36:56.249 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 14:36:59.074 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:37:59.076 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:38:50.246 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 14:38:50.299 [http-nio-7070-exec-6] INFO  c.n.e.r.AbstractInstanceRegistry -Cancelled instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 (replication=false)
+2019-08-02 14:38:50.300 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status DOWN (replication=false)
+2019-08-02 14:38:50.808 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status DOWN (replication=true)
+2019-08-02 14:38:50.808 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Cancelled instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 (replication=true)
+2019-08-02 14:38:59.076 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:39:20.736 [http-nio-7070-exec-10] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 14:39:21.247 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 14:39:59.076 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:40:59.077 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:41:59.077 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:42:59.077 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:43:59.078 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:44:59.078 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:45:05.976 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 14:45:06.036 [http-nio-7070-exec-5] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 14:45:59.079 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:46:59.079 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:47:59.079 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:48:59.080 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:49:59.080 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:50:59.081 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:51:56.249 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 6
+2019-08-02 14:51:59.082 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:52:59.082 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:53:59.083 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:54:59.084 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:55:59.085 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 14:56:59.086 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:57:59.087 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:58:20.858 [http-nio-7070-exec-9] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=false)
+2019-08-02 14:58:21.361 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=true)
+2019-08-02 14:58:24.841 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 14:58:25.352 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 14:58:59.087 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 14:59:59.088 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:00:59.089 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:01:59.090 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:02:59.091 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:03:59.092 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:04:18.341 [http-nio-7070-exec-8] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/172.20.10.7:ribbon:7071 with status UP (replication=false)
+2019-08-02 15:04:18.848 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/172.20.10.7:ribbon:7071 with status UP (replication=true)
+2019-08-02 15:04:59.092 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:05:59.093 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:06:35.171 [main] INFO  o.s.c.a.AnnotationConfigApplicationContext -Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386: startup date [Fri Aug 02 15:06:35 CST 2019]; root of context hierarchy
+2019-08-02 15:06:35.420 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-08-02 15:06:35.469 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'configurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$55508d93] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-02 15:06:35.545 [main] INFO  o.h.validator.internal.util.Version -HV000001: Hibernate Validator 5.3.4.Final
+2019-08-02 15:06:36.133 [main] INFO  com.lovnx.EurekaServer -No active profile set, falling back to default profiles: default
+2019-08-02 15:06:36.146 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext -Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@72209d93: startup date [Fri Aug 02 15:06:36 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386
+2019-08-02 15:06:36.716 [main] WARN  o.s.c.a.ConfigurationClassPostProcessor -Cannot enhance @Configuration bean definition 'refreshScope' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2019-08-02 15:06:36.890 [main] INFO  o.s.cloud.context.scope.GenericScope -BeanFactory id=380f7525-a313-3abd-a34e-046ed264cf0e
+2019-08-02 15:06:36.906 [main] INFO  o.s.b.f.a.AutowiredAnnotationBeanPostProcessor -JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-08-02 15:06:37.021 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker -Bean 'org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration' of type [org.springframework.cloud.autoconfigure.ConfigurationPropertiesRebinderAutoConfiguration$$EnhancerBySpringCGLIB$$55508d93] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-08-02 15:06:37.392 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat initialized with port(s): 7070 (http)
+2019-08-02 15:06:37.401 [main] INFO  o.a.catalina.core.StandardService -Starting service Tomcat
+2019-08-02 15:06:37.402 [main] INFO  o.a.catalina.core.StandardEngine -Starting Servlet Engine: Apache Tomcat/8.5.11
+2019-08-02 15:06:37.529 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring embedded WebApplicationContext
+2019-08-02 15:06:37.529 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader -Root WebApplicationContext: initialization completed in 1383 ms
+2019-08-02 15:06:38.204 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'metricsFilter' to: [/*]
+2019-08-02 15:06:38.204 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-08-02 15:06:38.204 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'requestContextFilter' to: [/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'webRequestTraceFilter' to: [/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'servletContainer' to urls: [/eureka/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean -Mapping filter: 'applicationContextIdFilter' to: [/*]
+2019-08-02 15:06:38.205 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean -Mapping servlet: 'dispatcherServlet' to [/]
+2019-08-02 15:06:38.287 [localhost-startStop-1] INFO  c.s.j.s.i.a.WebApplicationImpl -Initiating Jersey application, version 'Jersey: 1.19.1 03/11/2016 02:08 PM'
+2019-08-02 15:06:38.365 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2019-08-02 15:06:38.366 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2019-08-02 15:06:38.556 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2019-08-02 15:06:38.557 [localhost-startStop-1] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2019-08-02 15:06:39.246 [main] INFO  o.s.c.n.eureka.InstanceInfoFactory -Setting initial instance status as: STARTING
+2019-08-02 15:06:39.284 [main] INFO  c.netflix.discovery.DiscoveryClient -Client configured to neither register nor query for data.
+2019-08-02 15:06:39.291 [main] INFO  c.netflix.discovery.DiscoveryClient -Discovery Client initialized at timestamp 1564729599291 with initial instances count: 0
+2019-08-02 15:06:39.357 [main] INFO  c.n.e.DefaultEurekaServerContext -Initializing ...
+2019-08-02 15:06:39.359 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes -Adding new peer nodes [http://localhost:7070/eureka/]
+2019-08-02 15:06:39.685 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON encoding codec LegacyJacksonJson
+2019-08-02 15:06:39.686 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using JSON decoding codec LegacyJacksonJson
+2019-08-02 15:06:39.686 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML encoding codec XStreamXml
+2019-08-02 15:06:39.686 [main] INFO  c.n.d.p.DiscoveryJerseyProvider -Using XML decoding codec XStreamXml
+2019-08-02 15:06:39.771 [main] INFO  c.n.eureka.cluster.PeerEurekaNodes -Replica node URL:  http://localhost:7070/eureka/
+2019-08-02 15:06:39.778 [main] INFO  c.n.e.r.AbstractInstanceRegistry -Finished initializing remote region registries. All known remote regions: []
+2019-08-02 15:06:39.778 [main] INFO  c.n.e.DefaultEurekaServerContext -Initialized
+2019-08-02 15:06:40.090 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter -Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@72209d93: startup date [Fri Aug 02 15:06:36 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386
+2019-08-02 15:06:40.202 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.status(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2019-08-02 15:06:40.203 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/lastn],methods=[GET]}" onto public java.lang.String org.springframework.cloud.netflix.eureka.server.EurekaController.lastn(javax.servlet.http.HttpServletRequest,java.util.Map<java.lang.String, java.lang.Object>)
+2019-08-02 15:06:40.205 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2019-08-02 15:06:40.205 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping -Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2019-08-02 15:06:40.255 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 15:06:40.255 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 15:06:40.293 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping -Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2019-08-02 15:06:40.753 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/features || /features.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.753 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.754 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2019-08-02 15:06:40.755 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/restart || /restart.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.restart.RestartMvcEndpoint.invoke()
+2019-08-02 15:06:40.756 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/resume || /resume.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 15:06:40.756 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/archaius || /archaius.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.757 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2019-08-02 15:06:40.757 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.757 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.758 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.value(java.util.Map<java.lang.String, java.lang.String>)
+2019-08-02 15:06:40.758 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env/reset],methods=[POST]}" onto public java.util.Map<java.lang.String, java.lang.Object> org.springframework.cloud.context.environment.EnvironmentManagerMvcEndpoint.reset()
+2019-08-02 15:06:40.760 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.761 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/pause || /pause.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 15:06:40.762 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.763 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2019-08-02 15:06:40.764 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2019-08-02 15:06:40.764 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2019-08-02 15:06:40.765 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.765 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.765 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.766 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/refresh || /refresh.json],methods=[POST]}" onto public java.lang.Object org.springframework.cloud.endpoint.GenericPostableMvcEndpoint.invoke()
+2019-08-02 15:06:40.767 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2019-08-02 15:06:40.767 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2019-08-02 15:06:40.767 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.768 [main] INFO  o.s.b.a.e.mvc.EndpointHandlerMapping -Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2019-08-02 15:06:40.875 [main] INFO  o.s.u.f.SpringTemplateLoader -SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@72209d93: startup date [Fri Aug 02 15:06:36 CST 2019]; parent: org.springframework.context.annotation.AnnotationConfigApplicationContext@4032d386] and template loader path [classpath:/templates/]
+2019-08-02 15:06:40.876 [main] INFO  o.s.w.s.v.f.FreeMarkerConfigurer -ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2019-08-02 15:06:40.973 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-08-02 15:06:40.973 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-02 15:06:40.979 [main] WARN  c.n.c.sources.URLConfigurationSource -No URLs will be polled as dynamic configuration sources.
+2019-08-02 15:06:40.979 [main] INFO  c.n.c.sources.URLConfigurationSource -To enable URLs as dynamic configuration sources, define System property archaius.configurationSource.additionalUrls or make config.properties available on classpath.
+2019-08-02 15:06:41.179 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Registering beans for JMX exposure on startup
+2019-08-02 15:06:41.186 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshScope' has been autodetected for JMX exposure
+2019-08-02 15:06:41.187 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'environmentManager' has been autodetected for JMX exposure
+2019-08-02 15:06:41.188 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'configurationPropertiesRebinder' has been autodetected for JMX exposure
+2019-08-02 15:06:41.188 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'refreshEndpoint' has been autodetected for JMX exposure
+2019-08-02 15:06:41.189 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Bean with name 'restartEndpoint' has been autodetected for JMX exposure
+2019-08-02 15:06:41.191 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'environmentManager': registering with JMX server as MBean [org.springframework.cloud.context.environment:name=environmentManager,type=EnvironmentManager]
+2019-08-02 15:06:41.204 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'restartEndpoint': registering with JMX server as MBean [org.springframework.cloud.context.restart:name=restartEndpoint,type=RestartEndpoint]
+2019-08-02 15:06:41.215 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshScope': registering with JMX server as MBean [org.springframework.cloud.context.scope.refresh:name=refreshScope,type=RefreshScope]
+2019-08-02 15:06:41.225 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'configurationPropertiesRebinder': registering with JMX server as MBean [org.springframework.cloud.context.properties:name=configurationPropertiesRebinder,context=72209d93,type=ConfigurationPropertiesRebinder]
+2019-08-02 15:06:41.231 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter -Located managed bean 'refreshEndpoint': registering with JMX server as MBean [org.springframework.cloud.endpoint:name=refreshEndpoint,type=RefreshEndpoint]
+2019-08-02 15:06:41.233 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Registering beans for JMX exposure on startup
+2019-08-02 15:06:41.382 [main] INFO  o.s.c.s.DefaultLifecycleProcessor -Starting beans in phase 0
+2019-08-02 15:06:41.383 [main] INFO  o.s.c.n.e.EurekaDiscoveryClientConfiguration -Registering application eureka-server with eureka with status UP
+2019-08-02 15:06:41.383 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Setting the eureka configuration..
+2019-08-02 15:06:41.384 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Eureka data center value eureka.datacenter is not set, defaulting to default
+2019-08-02 15:06:41.384 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Eureka environment value eureka.environment is not set, defaulting to test
+2019-08-02 15:06:41.387 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'auditEventsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]
+2019-08-02 15:06:41.392 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'featuresEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=featuresEndpoint]
+2019-08-02 15:06:41.401 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -isAws returned false
+2019-08-02 15:06:41.402 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerBootstrap -Initialized server context
+2019-08-02 15:06:41.402 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Got 1 instances from neighboring DS node
+2019-08-02 15:06:41.402 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Renew threshold is: 1
+2019-08-02 15:06:41.402 [Thread-11] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Changing status to UP
+2019-08-02 15:06:41.405 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2019-08-02 15:06:41.407 [Thread-11] INFO  o.s.c.n.e.s.EurekaServerInitializerConfiguration -Started Eureka Server
+2019-08-02 15:06:41.408 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2019-08-02 15:06:41.411 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2019-08-02 15:06:41.414 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2019-08-02 15:06:41.416 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2019-08-02 15:06:41.418 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'loggersEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]
+2019-08-02 15:06:41.422 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2019-08-02 15:06:41.424 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2019-08-02 15:06:41.426 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2019-08-02 15:06:41.428 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2019-08-02 15:06:41.430 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2019-08-02 15:06:41.432 [main] INFO  o.s.b.a.e.jmx.EndpointMBeanExporter -Located managed bean 'archaiusEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=archaiusEndpoint]
+2019-08-02 15:06:41.449 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Initializing ProtocolHandler ["http-nio-7070"]
+2019-08-02 15:06:41.459 [main] INFO  o.a.coyote.http11.Http11NioProtocol -Starting ProtocolHandler [http-nio-7070]
+2019-08-02 15:06:41.475 [main] INFO  o.a.tomcat.util.net.NioSelectorPool -Using a shared selector for servlet write/read
+2019-08-02 15:06:41.492 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer -Tomcat started on port(s): 7070 (http)
+2019-08-02 15:06:41.493 [main] INFO  o.s.c.n.e.EurekaDiscoveryClientConfiguration -Updating port to 7070
+2019-08-02 15:06:41.496 [main] INFO  com.lovnx.EurekaServer -Started EurekaServer in 7.068 seconds (JVM running for 7.81)
+2019-08-02 15:06:57.718 [http-nio-7070-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] -Initializing Spring FrameworkServlet 'dispatcherServlet'
+2019-08-02 15:06:57.718 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization started
+2019-08-02 15:06:57.750 [http-nio-7070-exec-1] INFO  o.s.web.servlet.DispatcherServlet -FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2019-08-02 15:06:58.161 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=false)
+2019-08-02 15:06:58.860 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7076 with status UP (replication=true)
+2019-08-02 15:07:03.480 [http-nio-7070-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 15:07:03.996 [http-nio-7070-exec-2] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 15:07:41.403 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:08:41.404 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:09:41.405 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:10:41.405 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:11:41.405 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:12:41.406 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:13:41.407 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:14:41.407 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:15:41.407 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:16:41.407 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:17:41.407 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:18:41.408 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:19:41.409 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:20:41.409 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:21:39.777 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 15:21:41.409 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:22:09.212 [http-nio-7070-exec-4] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 15:22:09.724 [http-nio-7070-exec-7] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 15:22:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:23:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:24:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:25:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:26:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:27:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:28:41.410 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:29:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:30:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:31:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:32:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:33:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:34:41.411 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:35:41.412 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:36:39.777 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 15:36:41.413 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:37:41.414 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:38:41.415 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:39:41.415 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:40:41.415 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:41:41.416 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:42:41.417 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:43:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:44:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:45:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:46:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:47:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:48:41.418 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:49:41.420 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:50:41.421 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:51:39.778 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 15:51:41.421 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:52:41.421 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:53:41.421 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:54:41.422 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:55:41.422 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:56:41.423 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:57:41.424 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 15:58:41.425 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 15:59:41.426 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:00:41.426 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:01:41.427 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:02:41.428 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:03:41.428 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:04:41.429 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:05:41.429 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:06:39.779 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 16:06:41.430 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:07:41.430 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:08:41.431 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:09:41.432 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:10:41.432 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:11:41.432 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:12:41.433 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:13:41.434 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:14:41.434 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:15:41.434 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:16:41.435 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:16:43.031 [http-nio-7070-exec-1] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=false)
+2019-08-02 16:16:43.541 [http-nio-7070-exec-3] INFO  c.n.e.r.AbstractInstanceRegistry -Registered instance RIBBON/LAPTOP-CQQ8379A:ribbon:7071 with status UP (replication=true)
+2019-08-02 16:17:41.435 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:18:41.436 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:19:41.437 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:20:41.438 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:21:39.780 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 16:21:41.439 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:22:41.440 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:23:41.441 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:24:41.441 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:25:41.441 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:26:41.441 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:27:41.442 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:28:41.443 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:29:41.443 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:30:41.444 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:31:41.445 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:32:41.446 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:33:41.447 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:34:41.447 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:35:41.447 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:36:39.780 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 16:36:41.447 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:37:41.448 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:38:41.448 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:39:41.448 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:40:41.448 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:41:41.449 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:42:41.449 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:43:41.449 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:44:41.450 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:45:41.451 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:46:41.452 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:47:41.453 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:48:41.453 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:49:41.453 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:50:41.453 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:51:39.780 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 16:51:41.453 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:52:41.454 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:53:41.454 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:54:41.454 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:55:41.455 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 16:56:41.456 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:57:41.456 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:58:41.457 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 16:59:41.457 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:00:41.458 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:01:41.459 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:02:41.459 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:03:41.460 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 1ms
+2019-08-02 17:04:41.461 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:05:41.461 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 17:06:39.780 [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] INFO  c.n.e.r.PeerAwareInstanceRegistryImpl -Current renewal threshold is : 5
+2019-08-02 17:06:41.462 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 21:37:51.577 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 16214356ms
+2019-08-02 21:38:51.578 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 21:39:51.579 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms
+2019-08-02 21:40:51.579 [Eureka-EvictionTimer] INFO  c.n.e.r.AbstractInstanceRegistry -Running the evict task with compensationTime 0ms

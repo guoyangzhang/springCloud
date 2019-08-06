@@ -6,7 +6,7 @@ package com.zhang.redis.service;
  */
 public interface RedisService {
 
-    void setValue ();
+    void setValue();
 
     void setList();
 

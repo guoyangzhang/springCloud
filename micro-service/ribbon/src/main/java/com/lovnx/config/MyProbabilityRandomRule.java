@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Created by Mr.zhang on 2019/8/2
+ * @author Mr.zhang
  */
 public class MyProbabilityRandomRule {
     private static Logger log = LoggerFactory.getLogger(MyProbabilityRandomRule.class);
@@ -39,7 +40,7 @@ public class MyProbabilityRandomRule {
                         flag = true;
                     }
                 }
-                flag = false;
+//                flag = false;
                 if (flag == false) {
                     server = allList.get(0);
 //                    //根据key获取端口

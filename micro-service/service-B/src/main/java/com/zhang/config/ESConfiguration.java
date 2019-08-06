@@ -1,4 +1,4 @@
-//package com.zhang.config;
+package com.zhang.config;//package com.zhang.config;
 //
 //import org.elasticsearch.client.transport.TransportClient;
 //import org.elasticsearch.common.settings.Settings;

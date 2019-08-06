@@ -742,7 +742,7 @@ public class Untils {
         if(StringUtils.isNotEmpty(searchConditions)){
             String[] searchFields = searchConditions.split(" ");
             for (String str : searchFields) {
-                if (org.apache.commons.lang.StringUtils.isNotEmpty(str)) {
+                if (StringUtils.isNotEmpty(str)) {
                     res.add(str);
                 }
             }

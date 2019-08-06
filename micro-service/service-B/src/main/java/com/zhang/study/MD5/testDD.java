@@ -1,4 +1,4 @@
-//package com.zhang.study.MD5;
+package com.zhang.study.MD5;//package com.zhang.study.MD5;
 //
 ///**
 // * @Author: Mr.ZHANG

@@ -5,7 +5,7 @@ package com.zhang;
  * @Date: 2018/12/12 0012 下午 4:45
  */
 
-//import com.zhang.config.WebMvcConfig;
+import com.zhang.config.WebMvcConfig;
 import lombok.Data;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.ConfigurationProperties;

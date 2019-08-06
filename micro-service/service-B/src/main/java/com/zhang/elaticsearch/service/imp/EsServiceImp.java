@@ -21,7 +21,7 @@ public class EsServiceImp implements EsService {
         IndexParam indexParam = new IndexParam();
 //        indexParam.setIndexName();
 //        indexParam.setIndexType();
-//        indexParam.setFileds(*);
+//        indexParam.setFileds();
 //        indexParam.setPageNum();
 //        indexParam.setPageSize();
 //        indexParam.setQueryParam();

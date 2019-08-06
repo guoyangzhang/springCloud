@@ -7,9 +7,6 @@ package com.zhang.test;
 //import java.util.ArrayList;
 //import java.util.List;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * @Author: Mr.ZHANG
  * @Date: 2018/12/17 0017 下午 5:07
@@ -34,6 +31,6 @@ import java.util.Map;
 //    }
 
 class Test {
-
+    static int i = 1;
 }
 

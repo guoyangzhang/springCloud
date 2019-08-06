@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface LoginServer {
 
-    List<LoginEntity> search (LoginEntity loginEntity);
+    List<LoginEntity> search(LoginEntity loginEntity);
 }

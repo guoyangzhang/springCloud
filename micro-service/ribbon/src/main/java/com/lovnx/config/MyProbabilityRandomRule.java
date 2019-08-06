@@ -39,7 +39,7 @@ public class MyProbabilityRandomRule {
                         flag = true;
                     }
                 }
-//                flag = false;
+                flag = false;
                 if (flag == false) {
                     server = allList.get(0);
 //                    //根据key获取端口

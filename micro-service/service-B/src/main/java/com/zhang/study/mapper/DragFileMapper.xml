@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhang.study.mapper.DragFileMapper">
+    <resultMap id="BaseResultMap" type="com.zhang.study.entity.TreeDemo">
+        <id column="GUID" property="guid" jdbcType="VARCHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR"/>
+        <result column="PATH_URL" property="pathUrl" jdbcType="VARCHAR"/>
+        <result column="ROOT_NAME" property="rootName" jdbcType="VARCHAR"/>
+        <result column="ISHIDDEN" property="isHidden" jdbcType="VARCHAR"/>
+        <result column="ISFILE" property="isFile" jdbcType="VARCHAR"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    GUID, NAME, PARENT_ID, PATH_URL, ROOT_NAME, ISHIDDEN,ISFILE
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from drag_file
+        where GUID = #{guid,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from drag_file
+    where GUID = #{guid,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.zhang.study.entity.TreeDemo">
+    insert into drag_file (GUID, NAME, PARENT_ID, 
+      PATH_URL, ROOT_NAME, ISHIDDEN, ISFILE
+      )
+    values (#{guid,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
+      #{pathUrl,jdbcType=VARCHAR}, #{rootName,jdbcType=VARCHAR}, #{isHidden,jdbcType=TIMESTAMP},
+      #{isFile,jdbcType=VARCHAR}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="com.zhang.study.entity.TreeDemo">
+        insert into drag_file
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="guid != null">
+                GUID,
+            </if>
+            <if test="name != null">
+                NAME,
+            </if>
+            <if test="parentId != null">
+                PARENT_ID,
+            </if>
+            <if test="pathUrl != null">
+                PATH_URL,
+            </if>
+            <if test="rootName != null">
+                ROOT_NAME,
+            </if>
+            <if test="isHidden != null">
+                ISHIDDEN,
+            </if>
+            <if test="isFile != null">
+                ISFILE,
+            </if>
+
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="guid != null">
+                #{guid,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="pathUrl != null">
+                #{pathUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="rootName != null">
+                #{rootName,jdbcType=VARCHAR},
+            </if>
+            <if test="isHidden != null">
+                #{isHidden,jdbcType=VARCHAR},
+            </if>
+            <if test="isFile != null">
+                #{isFile,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.zhang.study.entity.TreeDemo">
+        update drag_file
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="parentId != null">
+                PARENT_ID = #{parentId,jdbcType=VARCHAR},
+            </if>
+            <if test="pathUrl != null">
+                PATH_URL = #{pathUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="rootName != null">
+                ROOT_NAME = #{rootName,jdbcType=VARCHAR},
+            </if>
+            <if test="isHidden != null">
+                ISHIDDEN = #{isHidden,jdbcType=VARCHAR},
+            </if>
+            <if test="isFile != null">
+                ISFILE = #{isFile,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where GUID = #{guid,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.zhang.study.entity.TreeDemo">
+    update drag_file
+    set NAME = #{name,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      PATH_URL = #{pathUrl,jdbcType=VARCHAR},
+      ROOT_NAME = #{rootName,jdbcType=VARCHAR},
+      ISHIDDEN = #{isHidden,jdbcType=VARCHAR},
+      ISFILE = #{isFile,jdbcType=VARCHAR}
+    where GUID = #{guid,jdbcType=VARCHAR}
+  </update>
+
+    <insert id="insertListSelective" parameterType="java.util.List">
+        insert into drag_file
+        (GUID, NAME, PARENT_ID,
+        PATH_URL, ROOT_NAME, ISHIDDEN, ISFILE
+        )
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.guid,jdbcType=VARCHAR},
+            #{item.name,jdbcType=VARCHAR},
+            #{item.parentId,jdbcType=VARCHAR},
+            #{item.pathUrl,jdbcType=VARCHAR},
+            #{item.rootName,jdbcType=VARCHAR},
+            #{item.isHidden,jdbcType=VARCHAR},
+            #{item.isFile,jdbcType=VARCHAR}
+            )
+        </foreach>
+
+    </insert>
+
+    <select id="selectCountRootName" resultType="java.lang.Integer" parameterType="java.lang.String">
+    select count(1)
+    from drag_file
+    where ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+  </select>
+
+    <delete id="deleteRootName" parameterType="java.lang.String">
+    delete from drag_file
+    where ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+  </delete>
+
+    <select id="selectList" resultMap="BaseResultMap" parameterType="com.zhang.study.entity.TreeDemo">
+        select
+        <include refid="Base_Column_List"/>
+        from drag_file
+        where 1=1
+        <if test="rootName != null and rootName !=''">
+            and ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+</mapper>

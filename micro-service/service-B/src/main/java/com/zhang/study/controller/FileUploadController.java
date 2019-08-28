@@ -87,6 +87,68 @@ public class FileUploadController {
 
 
     /**
+     * 直接上传,不需要分片
+     *
+     * @param file
+     * @return
+     * @throws IOException
+     */
+    @RequestMapping(value = "/uploadNoChunk", method = RequestMethod.POST)
+    public Map<String, String> uploadNoChunk(@RequestParam(value = "file", required = false) MultipartFile file, String guid, String filePath) throws IOException {
+        String result = "";
+        guid = URLDecoder.decode(guid, "UTF-8");
+        BufferedInputStream inputStream = null;
+        OutputStream outs = null;
+        BufferedOutputStream bouts = null;
+        try {
+            File file1 = new File(saveFilePath + filePath.substring(0,filePath.lastIndexOf("/")));
+            if(!file1.exists()){
+                file1.mkdirs();
+            }
+            File dirFile = new File(saveFilePath + filePath.substring(0,filePath.lastIndexOf("/")), file.getOriginalFilename());
+            //以读写的方式打开目标文件
+            inputStream = new BufferedInputStream(file.getInputStream());
+            outs = new FileOutputStream(dirFile);
+            bouts = new BufferedOutputStream(outs);
+            byte[] buf = new byte[8192];
+            int length = 0;
+            while ((length = inputStream.read(buf)) != -1) {
+                bouts.write(buf, 0, length);
+            }
+            // 刷新此缓冲的输出流
+            bouts.flush();
+            outs.flush();
+            inputStream.close();
+            outs.close();
+            bouts.close();
+        } catch (Exception e) {
+            throw new IOException(e.getMessage());
+        } finally {
+        }
+        try {
+            if (null != inputStream) {
+                inputStream.close();
+            }
+            if (null != outs) {
+                outs.close();
+            }
+            if (null != bouts) {
+                bouts.close();
+            }
+        } catch (Exception e) {
+            throw new IOException(e.getMessage());
+        }
+
+        Map<String, String> map = new HashMap<String, String>();
+
+        int res = -1;
+        //返回提示信息
+        map.put("result", result);
+        return map;
+    }
+
+
+    /**
      * 校验判断文件是否上传
      *
      * @return

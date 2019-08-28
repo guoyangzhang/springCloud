@@ -77,3 +77,11 @@ spring-cloud 微服务组件demo
 
 <td>备注1:</td>  <td>mybatis配置xml路径显示.在pom.xml配置resouce路径</td>
 </tr>
+<tr>
+<td>注意:</td>  <td>2019.8.28升级springBoot2.X,基于新版本改造(实验阶段)</td>
+问题
+    1.基于新版本启动失败,正在查找原因
+    2.对于GitHub 新建分支,切换分支,
+
+</tr>
+

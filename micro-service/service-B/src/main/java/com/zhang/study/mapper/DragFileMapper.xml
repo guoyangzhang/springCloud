@@ -9,10 +9,18 @@
         <result column="ROOT_NAME" property="rootName" jdbcType="VARCHAR"/>
         <result column="ISHIDDEN" property="isHidden" jdbcType="VARCHAR"/>
         <result column="ISFILE" property="isFile" jdbcType="VARCHAR"/>
+        <collection property="childList" select="getCategory" column="GUID"></collection>
     </resultMap>
     <sql id="Base_Column_List">
     GUID, NAME, PARENT_ID, PATH_URL, ROOT_NAME, ISHIDDEN,ISFILE
   </sql>
+    <select id="getCategory" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from drag_file
+        where PARENT_ID = #{pid}
+    </select>
+
     <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
         select
         <include refid="Base_Column_List"/>
@@ -155,6 +163,27 @@
         where 1=1
         <if test="rootName != null and rootName !=''">
             and ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <delete id="deleteList" parameterType="java.util.List">
+        delete from drag_file
+        where GUID IN
+        <foreach collection="list" item="item" index="index" open="(" close=")" separator=",">
+            #{item.guid}
+        </foreach>
+    </delete>
+
+    <select id="queryTree" resultMap="BaseResultMap" parameterType="com.zhang.study.entity.TreeDemo">
+        select
+        <include refid="Base_Column_List"/>
+        from drag_file
+        where 1=1
+        <if test="rootName != null and rootName !=''">
+            and ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+        </if>
+        <if test="pathUrl != null and pathUrl !=''">
+            and PATH_URL = #{pathUrl,jdbcType=VARCHAR}
         </if>
     </select>
 

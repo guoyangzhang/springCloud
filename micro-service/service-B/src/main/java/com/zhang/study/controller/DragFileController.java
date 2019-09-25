@@ -1,6 +1,7 @@
 package com.zhang.study.controller;
 
 
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import com.zhang.study.base.BaseController;
 import com.zhang.study.base.Result;
@@ -8,6 +9,7 @@ import com.zhang.study.common.MsgConsts;
 import com.zhang.study.entity.TreeDemo;
 import com.zhang.study.mapper.DragFileMapper;
 import com.zhang.utils.StringUtils;
+import org.apache.logging.log4j.core.util.KeyValuePair;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,10 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 /**
@@ -43,7 +42,7 @@ public class DragFileController extends BaseController {
     @ResponseBody
     public Result selectList(@RequestBody TreeDemo treeDemo, HttpServletRequest request) throws Exception {
         List<TreeDemo> list = dragFileMapper.selectList(treeDemo);
-        List<TreeDemo> demoList = dealTree(list);
+        List<TreeDemo> demoList = dealTree(list, "-1");
         if (CollectionUtils.isEmpty(demoList)) {
             return Result.error("文件不存在,请先上传");
         } else {
@@ -79,6 +78,7 @@ public class DragFileController extends BaseController {
             treeDemo.setName(rootName);
             treeDemo.setIsHidden(false);
             treeDemo.setRootName(rootName);
+            treeDemo.setPathUrl("/" + rootName);
             map.put("/" + rootName, uuid);
             treeDemo.setParentId("-1");
             demoList.add(treeDemo);
@@ -86,7 +86,7 @@ public class DragFileController extends BaseController {
             dragFileMapper.insertListSelective(demoList);
         }
         //处理数据成tree
-        demoList = dealTree(demoList);
+        demoList = dealTree(demoList, "-1");
         //本地文件上传服务器
 //        uploadFile(map, rootName);
         resultMap.put("demoList", demoList);
@@ -112,10 +112,10 @@ public class DragFileController extends BaseController {
     }
 
 
-    public List<TreeDemo> dealTree(List<TreeDemo> demoList) {
+    public List<TreeDemo> dealTree(List<TreeDemo> demoList, String parentId) {
         List<TreeDemo> oneLeverList = new ArrayList<>();
         for (TreeDemo treeDemo : demoList) {
-            if ("-1".equals(treeDemo.getParentId())) {
+            if (parentId.equals(treeDemo.getParentId())) {
                 oneLeverList.add(treeDemo);
             }
         }
@@ -170,47 +170,147 @@ public class DragFileController extends BaseController {
     }
 
 
-    @RequestMapping(value = "/downLoad", method = RequestMethod.POST)
-    @ResponseBody
-    public Result exportBrandInfo(TreeDemo treeDemo, HttpServletRequest request) throws Exception {
-
-        logger.info("执行下载");
-        try {
-            String response = download(treeDemo, request);
-            return Result.ok(response, 0);
-        } catch (Exception e) {
-            return Result.error(MsgConsts.SYSTEM_ERROR_CODE, MsgConsts.SYSTEM_ERROR_MSG, null);
-        }
-    }
-
-    public String download(TreeDemo treeDemo, HttpServletRequest request) throws Exception {
-        String downLoadUrl = "";
-        try {
-        } catch (Exception e) {
-            throw e;
-        } finally {
-
-        }
-        return downLoadUrl;
-    }
-
-
     /**
      * 新增tree节点数据
+     * <p>
+     * 存在相同文件及文件夹怎么处理,数据库则怎么处理,文件怎么处理
      *
-     * @param treeDemo
+     * @param treeDemoList
      * @param request
      * @return
      * @throws Exception
      */
     @RequestMapping(value = "/add", method = RequestMethod.POST)
     @ResponseBody
-    public Result add(@RequestBody TreeDemo treeDemo, HttpServletRequest request) throws Exception {
-        treeDemo.setGuid(StringUtils.uuid32len());
-        dragFileMapper.insertSelective(treeDemo);
-        return Result.ok(treeDemo);
+    public Result add(@RequestBody List<TreeDemo> treeDemoList, HttpServletRequest request) throws Exception {
+        int count = 0;
+        Map<String, String> stringMap = new HashMap<>();
+        if (!CollectionUtils.isEmpty(treeDemoList)) {
+            for (TreeDemo treeDemo : treeDemoList) {
+                stringMap.put(treeDemo.getParentPathUrl(), treeDemo.getParentId());
+                // 清除数据库数据
+                String pathUrl = "";
+                //1.可能文件夹,文件夹删除
+                treeDemo.getPathUrl();
+                if (treeDemo.getPathUrl().indexOf("/") > -1) {
+                    pathUrl = treeDemo.getParentPathUrl() + "/" + treeDemo.getPathUrl().substring(0, treeDemo.getPathUrl().indexOf("/"));
+                } else {
+                    pathUrl = treeDemo.getParentPathUrl() + "/" + treeDemo.getPathUrl();
+                }
+                TreeDemo treeDemo1 = new TreeDemo();
+                treeDemo1.setRootName(treeDemo.getRootName());
+                treeDemo1.setPathUrl(pathUrl);
+                TreeDemo treeDemo2 = dragFileMapper.queryTree(treeDemo1);
+                if (treeDemo2 != null) {  //清空原始数据
+                    List<TreeDemo> oldList = dragFileMapper.getCategory(treeDemo2.getGuid());
+                    oldList.add(treeDemo2);
+                    if (!CollectionUtils.isEmpty(oldList)) {
+                        dragFileMapper.deleteList(oldList);
+                    }
+                    File file = new File(pathUrl);
+                    if (file.exists()) {
+                        deleteDir(pathUrl);
+                    }
+                }
 
+            }
+//            录入数据
+            List<TreeDemo> list = queryList(treeDemoList);
+            if (!CollectionUtils.isEmpty(list)) {
+                count = dragFileMapper.insertListSelective(list);
+            }
+        }
+        if (count == 0) {
+            return Result.error("添加失败");
+        } else {
+            return Result.ok("添加成功");
+        }
     }
 
+    public List<TreeDemo> queryList(List<TreeDemo> treeDemoList) {
+        Map<String, String> map = new HashMap<>();
+        List<TreeDemo> demoList = new ArrayList<>();
+        String rootName = treeDemoList.get(0).getRootName();
+        for (TreeDemo treeDemo : treeDemoList) {
+            map.put(treeDemo.getParentPathUrl(), treeDemo.getParentId());
+            String pathUrl = treeDemo.getPathUrl();
+            List<String> stringList = Arrays.asList(pathUrl.split("/"));
+            String param = treeDemo.getParentPathUrl();
+            for (int i = 0; i < stringList.size(); i++) {
+                if (StringUtils.isEmpty(stringList.get(i))) {
+                    continue;
+                }
+                TreeDemo treeDemo1 = new TreeDemo();
+                treeDemo1.setRootName(rootName);
+                treeDemo1.setParentId(map.get(param));
+                if (i == stringList.size() - 1) {
+                    treeDemo1.setIsHidden(true);
+                } else {
+                    treeDemo1.setIsHidden(false);
+                }
+                param = param + "/" + stringList.get(i);
+                String uuid = StringUtils.uuid32len();
+                treeDemo1.setGuid(uuid);
+                treeDemo1.setName(stringList.get(i));
+                treeDemo1.setPathUrl(param);
+                if (StringUtils.isEmpty(map.get(param))) {
+                    map.put(param, uuid);
+                    demoList.add(treeDemo1);
+                }
+            }
+        }
+        return demoList;
+    }
+
+
+    public static void deleteDir(String dirPath) {
+        File file = new File(dirPath);
+        if (file.isFile()) {
+            file.delete();
+        } else {
+            File[] files = file.listFiles();
+            if (files == null) {
+                file.delete();
+            } else {
+                for (int i = 0; i < files.length; i++) {
+                    deleteDir(files[i].getAbsolutePath());
+                }
+                file.delete();
+            }
+        }
+    }
+
+
+    /**
+     * 修改tree节点
+     */
+    @RequestMapping(value = "/updateTree", method = RequestMethod.POST)
+    @ResponseBody
+    public Result updateTree(@RequestBody TreeDemo treeDemo, HttpServletRequest request) {
+        int index = dragFileMapper.updateByPrimaryKeySelective(treeDemo);
+        if (index > 0) {
+            return Result.ok("更新成功");
+        } else {
+            return Result.error("更新失败");
+        }
+    }
+
+    /**
+     * 新增tree节点
+     */
+    @RequestMapping(value = "/addNode", method = RequestMethod.POST)
+    @ResponseBody
+    public Result addNode(@RequestBody TreeDemo treeDemo, HttpServletRequest request) {
+        String uuid = StringUtils.uuid32len();
+        treeDemo.setGuid(uuid);
+        treeDemo.setIsFile(false);
+        treeDemo.setIsHidden(false);
+        int index = dragFileMapper.insertSelective(treeDemo);
+        if (index > 0) {
+            return Result.ok(uuid);
+        } else {
+            return Result.error("更新失败");
+        }
+    }
 
 }

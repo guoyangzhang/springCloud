@@ -27,5 +27,6 @@ public class TreeDemo extends BaseEntity {
 
     private Boolean isFile;
 
+    private String parentPathUrl;
 
 }

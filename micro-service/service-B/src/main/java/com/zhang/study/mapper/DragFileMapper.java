@@ -2,6 +2,7 @@ package com.zhang.study.mapper;
 
 import com.zhang.study.entity.TreeDemo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -26,5 +27,12 @@ public interface DragFileMapper {
     int deleteRootName(String rootName);
 
     List<TreeDemo> selectList(TreeDemo treeDemo);
+
+    int deleteList(List<TreeDemo> list);
+
+    List<TreeDemo> getCategory(String pid);
+
+
+    TreeDemo queryTree (TreeDemo record);
 
 }

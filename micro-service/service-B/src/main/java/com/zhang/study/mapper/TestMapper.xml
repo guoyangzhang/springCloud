@@ -3,7 +3,7 @@
 <mapper namespace ="com.zhang.study.mapper.TestMapper">
     <resultMap id="BaseResultMap" type="com.zhang.study.entity.TestEntity">
         <id column="ID" property="id" jdbcType="VARCHAR"/>
-        <result column="NAME" property="mane" jdbcType="VARCHAR"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
         <result column="SEX" property="sex" jdbcType="VARCHAR"/>
     </resultMap>
 

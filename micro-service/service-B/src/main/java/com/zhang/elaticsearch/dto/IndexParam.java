@@ -12,6 +12,7 @@ import java.io.Serializable;
 public class IndexParam implements Serializable {
 
     private static final long serialVersionUID = -8820889220229014823L;
+
     private String[] aliasesName;
 
     private String[] indexName;

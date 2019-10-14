@@ -9,7 +9,7 @@
         <result column="ROOT_NAME" property="rootName" jdbcType="VARCHAR"/>
         <result column="ISHIDDEN" property="isHidden" jdbcType="VARCHAR"/>
         <result column="ISFILE" property="isFile" jdbcType="VARCHAR"/>
-        <collection property="childList" select="getCategory" column="GUID"></collection>
+        <!--<collection property="childList" select="getCategory" column="GUID"></collection>-->
     </resultMap>
     <sql id="Base_Column_List">
     GUID, NAME, PARENT_ID, PATH_URL, ROOT_NAME, ISHIDDEN,ISFILE
@@ -163,6 +163,9 @@
         where 1=1
         <if test="rootName != null and rootName !=''">
             and ROOT_NAME = #{rootName,jdbcType=VARCHAR}
+        </if>
+        <if test="parentId != null and parentId !=''">
+            and PARENT_ID = #{parentId,jdbcType=VARCHAR}
         </if>
     </select>
 

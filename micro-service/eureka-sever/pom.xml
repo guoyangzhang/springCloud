@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -17,10 +18,10 @@
 		<!--Spring Boot 发布了一个新spring-boot-properties-migrator模块。一旦作为该模块作为依赖被添加到你的项目中，
 		它不仅会分析应用程序的环境，而且还会在启动时打印诊断信息，而且还会在运行时为您暂时迁移属性。在您的应用程序迁移期间，
 		这个模块是必备的,迁移完成删除-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-properties-migrator</artifactId>
-		</dependency>
+		<!--<dependency>-->
+			<!--<groupId>org.springframework.boot</groupId>-->
+			<!--<artifactId>spring-boot-properties-migrator</artifactId>-->
+		<!--</dependency>-->
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

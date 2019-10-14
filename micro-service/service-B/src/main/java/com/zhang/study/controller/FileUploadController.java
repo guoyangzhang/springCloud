@@ -1,21 +1,20 @@
 package com.zhang.study.controller;
 
-import com.zhang.out.entity.FileSyncTransPart;
-import com.zhang.out.mapper.FileSyncTransMapper;
+import com.alibaba.fastjson.JSONObject;
 import com.zhang.study.base.Result;
 import com.zhang.study.entity.TreeDemo;
-import com.zhang.utils.MD5Utils;
+import com.zhang.study.mapper.DragFileMapper;
 import com.zhang.utils.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.util.CollectionUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.annotation.Resource;
 import java.io.*;
-import java.net.URLDecoder;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
-import java.util.concurrent.*;
 
 
 /**
@@ -32,33 +31,95 @@ public class FileUploadController {
     @Value("${saveFilePath}")
     private String saveFilePath;
 
-    @Resource
-    private FileSyncTransMapper fileSyncTransMapper;
+    @Autowired
+    private DragFileMapper dragFileMapper;
+
 
     /**
-     * 简单的单文件上传
+     * 秒传,断点续传
+     * 根据md5查询是否已经存在上传完成的文件
+     * 根据MD5查询是否存在分片文件
      *
-     * @param file
+     * @param identifier
      * @return
+     * @throws IOException
+     */
+    @GetMapping("/upload")
+    public Result upload(String identifier,
+                         String relativePath,
+                         String filename,
+                         String totalChunks) {
+        Map<String, Object> resultMap = new HashMap<>();
+        File file = null;
+        resultMap.put("needMerge", false);
+        resultMap.put("skipUpload", false);
+        //校验文件是否上传
+        file = new File(saveFilePath + relativePath, filename);
+        if (file.exists()) {
+            if (identifier.equals(MD5Utils(file))) {
+                resultMap.put("skipUpload", true);
+                return Result.ok(resultMap);
+            }
+        }
+        file = new File(checkMD5Path + identifier);
+        //校验文件分片大于1,是否存在分片
+        if (Integer.parseInt(totalChunks) > 1 && file.exists()) {
+            int count = checkFileMd5(identifier);
+            List<Integer> list = new ArrayList<>();
+            if (count > 0) {
+                for (int i = 1; i <= count; i++) {
+                    list.add(i);
+                }
+                resultMap.put("chunkList", list);
+            }
+        }
+        return Result.ok(resultMap);
+
+    }
+
+
+    /**
+     * @param file       文件流
+     * @param identifier MD5 校验码
+     * @return 结果集
      * @throws IOException
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
-    public Result upload(@RequestParam(value = "file", required = false) MultipartFile file, String guid, String chunkSize, String fileName) throws IOException {
-        guid = URLDecoder.decode(guid, "UTF-8");
-
+    public Result simpleUpload(MultipartFile file,
+                               String identifier,
+                               String relativePath,
+                               String filename,
+                               String totalChunks,
+                               String chunkNumber) throws IOException {
         BufferedInputStream inputStream = null;
         OutputStream outs = null;
         BufferedOutputStream bouts = null;
+        Map<String, Object> resultMap = new HashMap<>();
+        System.out.println(identifier);
+        // 只有一个分片直传
         try {
-            File dirFile = new File(checkMD5Path + guid, fileName + "_" + chunkSize);
-            //以读写的方式打开目标文件
-            inputStream = new BufferedInputStream(file.getInputStream());
-            outs = new FileOutputStream(dirFile);
-            bouts = new BufferedOutputStream(outs);
-            byte[] buf = new byte[8192];
-            int length = 0;
-            while ((length = inputStream.read(buf)) != -1) {
-                bouts.write(buf, 0, length);
+            relativePath = "/" + relativePath;
+            if (totalChunks.equals("1")) {
+                File dirFile = new File(saveFilePath + relativePath.substring(0, relativePath.lastIndexOf("/")));
+                if (!dirFile.exists()) {
+                    dirFile.mkdirs();
+                }
+
+                //以读写的方式打开目标文件
+                inputStream = new BufferedInputStream(file.getInputStream());
+                outs = new FileOutputStream(new File(saveFilePath + relativePath.substring(0, relativePath.lastIndexOf("/")), filename));
+                bouts = new BufferedOutputStream(outs);
+                byte[] buf = new byte[8192];
+                int length = 0;
+                while ((length = inputStream.read(buf)) != -1) {
+                    bouts.write(buf, 0, length);
+                }
+
+                dealFileData(relativePath, filename);
+
+
+            } else {
+                return uploadChunk(file, identifier, relativePath, filename, totalChunks, chunkNumber, inputStream, outs, bouts, resultMap);
             }
             // 刷新此缓冲的输出流
             bouts.flush();
@@ -69,51 +130,35 @@ public class FileUploadController {
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error("上传失败");
-
         } finally {
-            try {
-                if (null != inputStream) {
-                    inputStream.close();
-                }
-                if (null != outs) {
-                    outs.close();
-                }
-                if (null != bouts) {
-                    bouts.close();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-                return Result.error("上传失败");
-            }
+            closeStream(inputStream, outs, bouts);
         }
         //返回提示信息
-        return Result.ok("上传成功");
+        resultMap.put("message", "上传成功");
+        return Result.ok(resultMap);
     }
 
 
-    /**
-     * 直接上传,不需要分片
-     *
-     * @param file
-     * @return
-     * @throws IOException
-     */
-    @RequestMapping(value = "/uploadNoChunk", method = RequestMethod.POST)
-    public Result uploadNoChunk(@RequestParam(value = "file", required = false) MultipartFile file, String guid, String filePath, String fileName) throws IOException {
+    public Result uploadChunk(MultipartFile file,
+                              String identifier,
+                              String filePath,
+                              String filename,
+                              String totalChunks,
+                              String chunkNumber,
+                              BufferedInputStream inputStream,
+                              OutputStream outs,
+                              BufferedOutputStream bouts,
+                              Map<String, Object> resultMap) throws IOException {
+        filename = filename + chunkNumber;
         String result = "";
-        guid = URLDecoder.decode(guid, "UTF-8");
-        BufferedInputStream inputStream = null;
-        OutputStream outs = null;
-        BufferedOutputStream bouts = null;
         try {
-            File file1 = new File(saveFilePath + filePath.substring(0, filePath.lastIndexOf("/")));
-            if (!file1.exists()) {
-                file1.mkdirs();
+            File dirFile = new File(checkMD5Path + identifier);
+            if (!dirFile.exists()) {
+                dirFile.mkdirs();
             }
-            File dirFile = new File(saveFilePath + filePath.substring(0, filePath.lastIndexOf("/")), fileName);
             //以读写的方式打开目标文件
             inputStream = new BufferedInputStream(file.getInputStream());
-            outs = new FileOutputStream(dirFile);
+            outs = new FileOutputStream(new File(checkMD5Path + identifier, filename));
             bouts = new BufferedOutputStream(outs);
             byte[] buf = new byte[8192];
             int length = 0;
@@ -126,61 +171,43 @@ public class FileUploadController {
             inputStream.close();
             outs.close();
             bouts.close();
-//            saveDataSouce(saveFilePath + filePath.substring(0, filePath.lastIndexOf("/")) + "/" + file.getOriginalFilename());
+
+            if (chunkNumber.equals(totalChunks)) {
+                resultMap.put("needMerge", true);
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
-            return Result.error("上传失败");
-        } finally {
+            resultMap.put("message", "上传失败");
+            return Result.error("resultMap");
         }
-        try {
-            if (null != inputStream) {
-                inputStream.close();
-            }
-            if (null != outs) {
-                outs.close();
-            }
-            if (null != bouts) {
-                bouts.close();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return Result.error("上传失败");
-        }
-        return Result.ok("上传成功");
+        resultMap.put("message", "上传成功");
+        return Result.ok(resultMap);
     }
 
 
-    /**
-     * 校验判断文件是否上传
-     *
-     * @return
-     */
-    @RequestMapping(value = "checkFileMd5", method = RequestMethod.POST)
-    @ResponseBody
-    public Result checkFileMd5(@RequestBody TreeDemo treeDemo) throws IOException {
-
-        File file = new File(checkMD5Path + treeDemo.getGuid());
+    public int checkFileMd5(@RequestBody String MD5) {
+        int count = 0;
+        File file = new File(checkMD5Path + MD5);
         if (file.exists()) {
             File[] listfile = file.listFiles();
             if (listfile.length > 0) {
-                File file1 = new File(listfile[listfile.length - 1].toString());
-                if (file1.isFile()) {
-                    file1.delete();
+                String fileName = listfile[0].toString();
+                File lastFile = new File(fileName.substring(0, fileName.length() - 1) + String.valueOf(listfile.length));
+                if (lastFile.isFile()) {
+                    lastFile.delete();
                 }
-                return Result.ok(listfile.length - 1);
-            } else {
-                return Result.ok(listfile.length);
+                count = listfile.length - 1;
             }
         } else {
             file.mkdir();
-            return Result.ok("0");
         }
+        return count;
     }
 
 
     /**
      * 合并文件
-     * 在拆分存放
      */
     @RequestMapping(value = "mergeFile", method = RequestMethod.POST)
     @ResponseBody
@@ -192,24 +219,21 @@ public class FileUploadController {
         File[] listfile = null;
         Boolean check = true;
         try {
+            String filePath = treeDemo.getPathUrl();
             File file = new File(checkMD5Path + treeDemo.getGuid());
             if (file.exists()) {
                 listfile = file.listFiles();
             }
-            File file1 = new File(saveFilePath + treeDemo.getPathUrl().substring(0, treeDemo.getPathUrl().lastIndexOf("/")));
-            if (!file1.exists()) {
-                file1.mkdirs();
+            File outFile = new File(saveFilePath + filePath.substring(0, filePath.lastIndexOf("/")));
+            if (!outFile.exists()) {
+                outFile.mkdirs();
             }
             outs = new FileOutputStream(new File(saveFilePath + treeDemo.getPathUrl()));
             bouts = new BufferedOutputStream(outs);
             //开始合并文件，对应切片的二进制文件
-            for (int i = 0; i < listfile.length; i++) {
-                if (i == 99) {
-                    System.out.println(i);
-                }
+            for (int i = 1; i <= listfile.length; i++) {
                 //读取切片文件
-                String pathUrl = checkMD5Path + treeDemo.getGuid() + "\\" + treeDemo.getName() + "_" + i;
-                System.out.println(pathUrl);
+                String pathUrl = checkMD5Path + treeDemo.getGuid() + "\\" + treeDemo.getName() + i;
                 ins = new FileInputStream(pathUrl);
                 bins = new BufferedInputStream(ins);
                 byte[] buff = new byte[8192];
@@ -226,12 +250,9 @@ public class FileUploadController {
             outs.flush();
             outs.close();
             bouts.close();
+            delList(treeDemo.getGuid());
+            dealFileData(treeDemo.getPathUrl(), treeDemo.getName());
             System.out.println("合并完成");
-//-------------------------------------------------------------------------------------------------//
-//            check = saveDataSouce(saveFilePath + treeDemo.getPathUrl());
-//-------------------------------------------------------------------------------------------------//
-
-
         } catch (Exception e) {
             e.printStackTrace();
             return Result.error("上传失败!");
@@ -262,107 +283,78 @@ public class FileUploadController {
         }
     }
 
-
     /**
      * 设置文件流md5校验,并重新分片
      */
-    public Boolean saveDataSouce(String filePath) throws Exception {
-        InputStream is = null;
-        BufferedInputStream bis = null;
-        File file = new File(filePath);
-        String fileId = "";
-        Boolean check = true;
-        try {
-            fileId = MD5Utils.getFileMD5String(file);
-            //查询库中是否存在,存在则不需要录入
-            int count = fileSyncTransMapper.selectFileIdCount(fileId);
-            if (count == 0) {
-                is = new FileInputStream(file);
-                long fileSize = is.available();
-                // 分割大小500M
-                long splitSize = 500 * 1024 * 1024;
-                // 计算分割数量
-                int fileTotal = 0;
-                // 判断大小
-                if (fileSize > splitSize) {
-                    if (fileSize % splitSize == 0) {
-                        fileTotal = (int) (fileSize / splitSize);
-                    } else {
-                        fileTotal = (int) (fileSize / splitSize) + 1;
-                    }
-                } else {
-                    fileTotal = 1;
-                    splitSize = fileSize;
-                }
-                // 创建字节数组
-                byte[] bytes;
-                bis = new BufferedInputStream(is);
-                for (int i = 0; i < fileTotal; i++) {
-                    long availableSize = is.available();
-                    if (availableSize < splitSize) {
-                        bytes = new byte[Integer.parseInt(String.valueOf(availableSize).substring(i * (int) splitSize, (int) splitSize))];
-                    } else {
-                        bytes = new byte[(int) splitSize];
-                    }
-                    int len = bis.read(bytes);
-                    //循环保存3次，容错
-//                    check = saveFileTransPart(fileId, bytes, i);
-//                    重新分片文件
-
-                    if (!check) {
-                        break;
-                    }
-                }
-            }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (null != is) {
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
+//    public Boolean saveDataSouce(String filePath) throws Exception {
+//        InputStream is = null;
+//        BufferedInputStream bis = null;
+//        File file = new File(filePath);
+//        String fileId = "";
+//        Boolean check = true;
+//        try {
+//            fileId = MD5Utils.getFileMD5String(file);
+//            //查询库中是否存在,存在则不需要录入
+//            int count = fileSyncTransMapper.selectFileIdCount(fileId);
+//            if (count == 0) {
+//                is = new FileInputStream(file);
+//                long fileSize = is.available();
+//                // 分割大小500M
+//                long splitSize = 500 * 1024 * 1024;
+//                // 计算分割数量
+//                int fileTotal = 0;
+//                // 判断大小
+//                if (fileSize > splitSize) {
+//                    if (fileSize % splitSize == 0) {
+//                        fileTotal = (int) (fileSize / splitSize);
+//                    } else {
+//                        fileTotal = (int) (fileSize / splitSize) + 1;
+//                    }
+//                } else {
+//                    fileTotal = 1;
+//                    splitSize = fileSize;
+//                }
+//                // 创建字节数组
+//                byte[] bytes;
+//                bis = new BufferedInputStream(is);
+//                for (int i = 0; i < fileTotal; i++) {
+//                    long availableSize = is.available();
+//                    if (availableSize < splitSize) {
+//                        bytes = new byte[Integer.parseInt(String.valueOf(availableSize).substring(i * (int) splitSize, (int) splitSize))];
+//                    } else {
+//                        bytes = new byte[(int) splitSize];
+//                    }
+//                    int len = bis.read(bytes);
+//                    //循环保存3次，容错
+////                    check = saveFileTransPart(fileId, bytes, i);
+////                    重新分片文件
+//
+//                    if (!check) {
+//                        break;
+//                    }
+//                }
+//            }
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        } finally {
+//            if (null != is) {
+//                try {
+//                    is.close();
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//        return check;
+//    }
+    public void delList(String MD5) {
+        File file = new File(checkMD5Path + MD5);
+        if (file.exists()) {
+            deleteDir(checkMD5Path + MD5);
         }
-        return check;
     }
-
-    private boolean saveFileTransPart(String fileId, byte[] bytes, int i) {
-        FileSyncTransPart part = new FileSyncTransPart();
-        part.setFileId(fileId);
-        part.setPartFile(bytes);
-        part.setPartSort(i);
-        try {
-            fileSyncTransMapper.saveFileTransPart(part);
-        } catch (Exception e) {
-            return false;
-        }
-        return true;
-    }
-
-    /**
-     * 删除缓存文件
-     * 将guid 设置成文件唯一性的id
-     *
-     * @param treeDemoList
-     */
-    @RequestMapping(value = "delList", method = RequestMethod.POST)
-    @ResponseBody
-    public Result delList(@RequestBody List<TreeDemo> treeDemoList) {
-        if (!CollectionUtils.isEmpty(treeDemoList)) {
-            for (TreeDemo treeDemo : treeDemoList) {
-                File file = new File(checkMD5Path + treeDemo.getGuid());
-                if (file.exists()) {
-                    deleteDir(checkMD5Path + treeDemo.getGuid());
-                }
-            }
-        }
-        return Result.ok("删除成功");
-    }
-
 
     public static void deleteDir(String dirPath) {
         File file = new File(dirPath);
@@ -381,75 +373,86 @@ public class FileUploadController {
         }
     }
 
-
-    @RequestMapping(value = "tree", method = RequestMethod.GET)
-    @ResponseBody
-    public Result treadCallable() {
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
-        Map<String, Future<String>> uploadMap = new HashMap<>();
-        //存放异常的数据
-        Map<String, String> resultMap = new HashMap<>();
-        List<String> exceptionList = new ArrayList<>();
-        for (int i = 0; i < 11; i++) {
-            Callable callable1 = new CallableImpl(i);
-            Future<String> future = executorService.submit(callable1);
-            uploadMap.put(String.valueOf(i), future);
+    public void closeStream(BufferedInputStream inputStream, OutputStream outs, BufferedOutputStream bouts) {
+        try {
+            if (null != inputStream) {
+                inputStream.close();
+            }
+            if (null != outs) {
+                outs.close();
+            }
+            if (null != bouts) {
+                bouts.close();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-        uploadMap.forEach((key, value) -> {
-            Future<String> future = value;
+    }
+
+    public String MD5Utils(File file) {
+        String md5 = "";
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            MessageDigest md = null;
             try {
-                resultMap.put(key, future.get(1, TimeUnit.MINUTES));
-            } catch (InterruptedException e) {
-                exceptionList.add(key);
-                e.printStackTrace();
-            } catch (ExecutionException e) {
-                exceptionList.add(key);
-                e.printStackTrace();
-            } catch (TimeoutException e) {
-                exceptionList.add(key);
+                md = MessageDigest.getInstance("MD5");
+            } catch (NoSuchAlgorithmException e) {
                 e.printStackTrace();
             }
-
-        });
-
-        executorService.shutdown();
-        //对异常数据重新请求三次
-        if (CollectionUtils.isEmpty(exceptionList)) {
-            System.out.println("多线程结束!");
-            return Result.ok(resultMap);
-        } else {
-            return Result.error("失败");
-        }
-
-
-    }
-
-
-    public class CallableImpl implements Callable {
-        private int count;
-
-        CallableImpl(int count) {
-            this.count = count;
-        }
-
-        @Override
-        public Object call() {
-            try {
-                Thread.sleep(3000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+            byte[] buffer = new byte[1024];
+            int length = -1;
+            while ((length = fis.read(buffer, 0, 1024)) != -1) {
+                md.update(buffer, 0, length);
             }
-            String uuid = uuid();
-            System.out.println("count>>>>>>>>>>>>>>>>>>>>>>>" + count);
-            System.out.println("count>>>>>>>>>>>>>>>>>>>>>>>" + uuid);
-            return uuid;
+            BigInteger bigInt = new BigInteger(1, md.digest());
+            md5 = bigInt.toString(16);
+
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return md5;
+    }
+
+    public void dealFileData(String relativePath, String filename) {
+        Map<String, String> map = new HashMap<>();
+        List<String> stringList = Arrays.asList(relativePath.split("/"));
+        TreeDemo treeDemo = new TreeDemo();
+        treeDemo.setParentId("-1");
+        treeDemo.setIsFile(false);
+        treeDemo.setIsHidden(false);
+        String pathUrl = "";
+        for (int i = 0; i < stringList.size(); i++) {
+            String path = stringList.get(i);
+            if (StringUtils.isEmpty(path)) {
+                continue;
+            }
+            String parentPath = pathUrl;
+            String uuid = StringUtils.uuid32len();
+            pathUrl = pathUrl + "/" + path;
+            treeDemo.setPathUrl(pathUrl);
+            TreeDemo treeDemo1 = dragFileMapper.queryTree(treeDemo);
+            if (treeDemo1 != null) {
+                map.put(pathUrl, treeDemo1.getGuid());
+            } else {
+                if (StringUtils.isEmpty(parentPath)) {
+                    treeDemo.setParentId("-1");
+                } else {
+                    treeDemo.setParentId(map.get(parentPath));
+                }
+                treeDemo.setGuid(uuid);
+                treeDemo.setName(path);
+                // 存在后缀校验,不知道是文件还是文件夹
+                if (filename.equals(path) && i == stringList.size() - 1 && filename.indexOf(".") > 0) {
+                    treeDemo.setIsFile(true);
+                    treeDemo.setIsHidden(true);
+                }
+                map.put(pathUrl, uuid);
+                treeDemo.setGuid(uuid);
+                dragFileMapper.insertSelective(treeDemo);
+            }
+
         }
     }
-
-    public String uuid() {
-
-        return StringUtils.uuid32len();
-    }
-
-
 }

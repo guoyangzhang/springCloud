@@ -313,4 +313,14 @@ public class DragFileController extends BaseController {
         }
     }
 
+
+    @RequestMapping(value = "/selectDeskList", method = RequestMethod.POST)
+    @ResponseBody
+    public Result selectDeskList(@RequestBody TreeDemo treeDemo, HttpServletRequest request) throws Exception {
+        if (StringUtils.isEmpty(treeDemo.getParentId())) {
+            treeDemo.setParentId("-1");
+        }
+        List<TreeDemo> list = dragFileMapper.selectList(treeDemo);
+            return Result.ok(list);
+    }
 }
